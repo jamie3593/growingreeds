@@ -60,6 +60,9 @@ font-style: normal;
 .sec6 {
   background-color: #fcdc3e;
   color: #006450;
+  background-image: url(../images/arizona.png);
+  background-repeat: no-repeat;
+  background-position: 85%;
 }
 
 footer {
@@ -560,6 +563,20 @@ header .nav-list a {
   position: absolute;
   top: 43rem;
   left: 4rem;
+  z-index: 3;
+}
+
+.lotus3_expl {
+  width: 5.5rem;
+  height: 5.5rem;
+  background-color: #fff;
+  color: #333;
+  opacity: 0.5;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  position: absolute;
+  top: 51rem;
+  left: 45rem;
   z-index: 3;
 }
 

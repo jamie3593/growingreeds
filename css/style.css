@@ -495,6 +495,7 @@ header .nav-list a {
   top: -3rem;
   left: 27.6rem;
 }
+
 .sparkle2 {
   position: absolute;
   top: 7rem;
@@ -539,45 +540,49 @@ header .nav-list a {
 
 .lotus1_expl {
   width: 22rem;
-  height: 8rem;
-
+  height: 18rem;
   background-color: #fff;
   color: #333;
-  opacity: 0.5;
+  opacity: 0.8;
   padding: 1.5rem;
   border-radius: 0.5rem;
   position: absolute;
   top: 10rem;
   left: 55rem;
   z-index: 3;
+  display: none;
 }
 
-.lotus2_expl {
-  width: 15rem;
-  height: 8rem;
+.lotus1:hover.lotus1_expl p {
+  display: block;
+}
+
+/* .lotus2_expl {
   background-color: #fff;
   color: #333;
-  opacity: 0.5;
+  opacity: 0.8;
   padding: 1.5rem;
   border-radius: 0.5rem;
   position: absolute;
   top: 43rem;
   left: 4rem;
   z-index: 3;
-}
+  display: none;
+} */
 
-.lotus3_expl {
+.lotus4_expl {
   width: 5.5rem;
   height: 5.5rem;
   background-color: #fff;
   color: #333;
-  opacity: 0.5;
+  opacity: 0.8;
   padding: 1.5rem;
   border-radius: 0.5rem;
   position: absolute;
   top: 51rem;
   left: 45rem;
   z-index: 3;
+  display: none;
 }
 
 .lotus2 {
@@ -718,6 +723,47 @@ header .nav-list a {
   overflow: hidden;
 }
 
+/* modal windows */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(41, 41, 41, 0.9);
+  z-index: 0;
+}
+
+.modal img {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+.close-modal {
+  width: 2.8rem;
+  height: 2.8rem;
+  background: none;
+  border: none;
+  color: #fff;
+  position: absolute;
+  top: 2rem;
+}
+
+.modal.modal_hidden {
+  visibility: hidden;
+}
+
 /* section 6 */
 .sec6 h3 {
   margin-bottom: 5rem;
@@ -802,7 +848,7 @@ header .nav-list a {
 .insta,
 .facebook,
 .phone {
-  animation: upanddown 2s ease-in-out infinite;
+  /* animation: upanddown 2s ease-in-out infinite; */
   transition: 3s;
   width: 5rem;
 }

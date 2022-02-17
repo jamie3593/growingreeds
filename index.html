@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://use.typekit.net/apn0tdz.css" />
     <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+
     <link rel="stylesheet" href="css/style.css" />
 
     <script
@@ -14,7 +15,10 @@
       crossorigin="anonymous"
     ></script>
     <script type="text/javascript" src="js/jquery.fullPage.js"></script>
-    <script src="script.js"></script>
+    <script
+      type="text/javascript"
+      src="js/jquery.fullpage.extensions.min.js"
+    ></script>
 
     <title>Growing Reeds</title>
   </head>
@@ -157,45 +161,60 @@
           <img src="images/bigsparkle.png" alt="sparkle" class="sparkle1" />
           <img src="images/bigsparkle.png" alt="sparkle" class="sparkle2" />
           <div class="water">
-            <a
-              href="https://jamiechandesu.github.io/wellingtongallery/"
-              target="_blank"
-              ><img
-                src="images/lotus1.png"
-                alt="a drawing of lotus"
-                class="lotus1"
-              />
-            </a>
-            <div class="lotus1_expl">
-              <p>뉴질랜드 웰링턴에 위치한 가상의 갤러리 웹 사이트</p>
+            <div class="project01">
+              <a
+                href="https://jamiechandesu.github.io/wellingtongallery/"
+                target="_blank"
+                ><img
+                  src="images/lotus1.png"
+                  alt="a drawing of lotus"
+                  class="lotus1"
+                />
+              </a>
+              <div class="lotus1_expl">
+                <img src="images/welly.jpg" alt="" />
+                <p>뉴질랜드 웰링턴에 위치한 가상의 갤러리 웹 사이트</p>
+              </div>
             </div>
 
-            <a
-              href="https://jamiechandesu.github.io/videoplayer/"
-              target="_blank"
-            >
-              <img
-                src="images/lotus2.png"
-                alt="a drawing of lotus"
-                class="lotus2"
-            /></a>
-            <div class="lotus2_expl">
-              <p>세상에 하나뿐인 비디오 플레이어</p>
+            <div class="project02">
+              <a href="" target="_blank">
+                <img
+                  src="images/lotus2.png"
+                  alt="a drawing of lotus"
+                  class="lotus2"
+              /></a>
+              <div class="lotus2_expl">
+                <p></p>
+              </div>
             </div>
 
-            <img
-              src="images/lotus3.png"
-              alt="a drawing of lotus"
-              class="lotus3"
-            />
-            <a href="https://jamie3593.github.io/musicplayer/" target="_blank">
-              <img
-                src="images/lotus4.png"
-                alt="a drawing of lotus"
-                class="lotus4"
-            /></a>
-            <div class="lotus3_expl">
-              <p>🎵</p>
+            <div class="project03">
+              <a href="">
+                <img
+                  src="images/lotus3.png"
+                  alt="a drawing of lotus"
+                  class="lotus3"
+                />
+              </a>
+              <div class="lotus3_expl">
+                <p></p>
+              </div>
+            </div>
+
+            <div class="project04">
+              <a
+                href="https://jamie3593.github.io/musicplayer/"
+                target="_blank"
+              >
+                <img
+                  src="images/lotus4.png"
+                  alt="a drawing of lotus"
+                  class="lotus4"
+              /></a>
+              <div class="lotus4_expl">
+                <p>🎵</p>
+              </div>
             </div>
 
             <img
@@ -222,19 +241,42 @@
         <h3>art work</h3>
         <div class="thumbnails">
           <figure class="gallery-item">
-            <img src="images/thumb1.png" alt="" />
+            <img src="images/thumb1.png" alt="" class="thumb1" />
           </figure>
           <figure class="gallery-item">
-            <img src="images/thumb2.png" alt="" />
+            <img src="images/thumb2.png" alt="" class="thumb2" />
           </figure>
           <figure class="gallery-item">
-            <img src="images/thumb3.png" alt="" />
+            <img src="images/thumb3.png" alt="" class="thumb3" />
           </figure>
           <figure class="gallery-item">
-            <img src="images/thumb4.png" alt="" />
+            <img src="images/thumb4.png" alt="" class="thumb4" />
           </figure>
         </div>
+
+        <!-- modal windows -->
+        <div class="modal modal_hidden">
+          <button class="close-modal">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+          <img src="images/art1.png" alt="art work" id="art" />
+        </div>
+        <!-- modal end -->
       </section>
+
       <!-- section 5 start -->
 
       <!-- section 6 start -->
@@ -323,6 +365,8 @@
     <!-- footer end -->
 
     <!-- script start -->
+    <script src="js/app.js"></script>
+
     <!-- fullpage js -->
     <script>
       $(document).ready(function () {
@@ -331,10 +375,10 @@
           autoScrolling: true,
           scrollHorizontally: true,
         });
-
-        //methods
-        $.fn.fullpage.setAllowScrolling(true);
       });
+
+      //methods
+      $.fn.fullpage.setAllowScrolling(true);
 
       new fullpage("#fullpage", {
         anchors: ["sec1", "sec2", "sec3", "sec4", "sec5", "sec6", "footer"],

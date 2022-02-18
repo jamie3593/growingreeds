@@ -602,6 +602,31 @@ header .nav-list a {
   font-size: 1.8rem;
 }
 
+.lotus{
+  text-align: center;
+  width: max-content;
+  background: rgba( 255, 255, 255, 0.25 );
+  color: #fff;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 20px -15px #000;   
+  border-width: 1px 1px 0 0; 
+  border-color: rgba( 255, 255, 255, 0.25 );
+  border-style: solid;
+  /* border: 1px solid rgba( 255, 255, 255, 0.25 );   */
+  padding: 1.8rem;
+  border-radius: 2.5rem;
+  position: absolute;
+  display: none;
+}
+
+.lotus > img{
+  border-width: 2px 2px 0 0px; 
+  border-color: rgba( 255, 255, 255, 0.5 );
+  border-style: solid;
+  border-radius: 1.2rem;
+}
+
 .lotus1,
 .lotus2,
 .lotus3,
@@ -620,21 +645,14 @@ header .nav-list a {
 }
 
 .lotus1_expl {
-  width: 23rem;
-  height: 18rem;
-  background-color: rgba(255,255,255,0.3);
-  color: #333;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 6px 20px -15px #000; 
-  border-width: 1px 1px 0 0; 
-  padding: 1.5rem;
-  border-radius: 0.5rem;
-  position: absolute;
+  /* width: 23rem; */
   top: 11rem;
   left: 63rem;
   z-index: 3;
-  display: none;
+}
+
+.lotus1_expl p{
+  margin-top: 0.5rem;
 }
 
 .lotus1:hover.lotus1_expl p {
@@ -666,55 +684,27 @@ canvas{
 }
 
 .lotus2_expl {
-  width: fit-content;  
-  background-color: rgba(255,255,255,0.3);
-  color: #333;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 6px 20px -15px #000; 
-  border-width: 1px 1px 0 0; 
-  padding: 1.5rem;
-  border-radius: 0.5rem;
-  position: absolute;
   top: 44rem;
   left: 12rem;
   z-index: 3;
-  display: none;
 }
 
 .lotus3_expl {
-  width: fit-content;  
-  background-color: rgba(255,255,255,0.3);
-  color: #333;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 6px 20px -15px #000; 
-  border-width: 1px 1px 0 0; 
-  padding: 1.5rem;
-  border-radius: 0.5rem;
-  position: absolute;
   top: 14rem;
   left: 9rem;
   z-index: 3;
-  display: none;
 }
 
 .lotus4_expl {
-  width: 5.5rem;
-  height: 5.5rem;
-  background-color: rgba(255,255,255,0.3);
-  color: #333;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 6px 20px -15px #000; 
-  border-width: 1px 1px 0 0; 
-  padding: 1.5rem;
-  border-radius: 0.5rem;
-  position: absolute;
   top: 51rem;
   left: 49rem;
   z-index: 3;
-  display: none;
+}
+
+.lotus5_expl {
+  top: 35rem;
+  left: 72rem;
+  z-index: 3;
 }
 
 .lotus2 {

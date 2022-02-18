@@ -80,12 +80,22 @@ footer {
   font-size: 8rem;
 }
 
+/* :is(.sec2, .sec3, .sec4, .sec5, .sec6) h3 {
+  font-family: "bely-display", sans-serif;
+  font-size: 8rem;
+} */
+
+
 .sec3 h3,
 .sec4 h3,
 .sec5 h3,
 .sec6 h3 {
   padding-top: 5rem;
 }
+
+/* :is(.sec3, .sec4, .sec5, .sec6) h3 {
+  padding-top: 5rem;
+} */
 
 .sec5,
 .sec6,
@@ -238,11 +248,56 @@ header .nav-list a {
   }
 }
 
+@media (max-width: 1780px) {
+  .sec1 h2 {
+    font-size: 56rem;
+  }
+}
+
+@media (max-width: 1600px) {
+  .sec1 h2 {
+    font-size: 47rem;
+  }
+}
+
+@media (max-width: 1440px) {
+  .nav-list ul {
+    display: flex;
+    margin-right: 4.5;
+    gap: 5rem;
+  }
+
+  .sec1 h2 {
+    font-size: 44rem;
+  }
+}
+
+@media (max-width: 1360px) {
+  .nav-list ul {
+    margin-right: 4.5rem;
+    gap: 5rem;
+  }
+
+  .sec1 h2 {
+    font-size: 41rem;
+  }
+}
+
+@media (max-width: 1280px) {
+  .nav-list ul {
+    margin-right: 4.5rem;
+    gap: 5rem;
+  }
+
+  .sec1 h2 {
+    font-size: 39rem;
+  }
+}
+
 /* section 2 */
 .sec2 {
   display: flex;
   height: 93.5rem;
-  width: 100%;
   width: 100%;
 }
 
@@ -262,6 +317,31 @@ header .nav-list a {
   overflow-wrap: break-word;
   line-height: 1.5em;
   font-family: "Cafe24Simplehae";
+}
+
+@media (max-width: 1660px) {
+  .fp-tableCell{
+    width: 90%;
+  }
+
+  .sec2-text{
+    padding: 5.5rem 8rem;
+  }
+}
+
+@media (max-width: 1280px) {
+  .sec2 {
+    width: 100%;
+  }
+
+  .sec2-text {
+    width: 50%;
+    font-size: 2rem;
+    padding: 4.5rem 6rem;
+    overflow-wrap: break-word;
+    line-height: 1.5em;
+    font-family: "Cafe24Simplehae";
+  }
 }
 
 .sec2-images {
@@ -372,10 +452,10 @@ header .nav-list a {
 }
 
 .mousecable {
-  height: 88rem;
+  height: 94rem;
   position: absolute;
-  top: 2.9rem;
-  left: 35.9rem;
+  top: 0.9rem;
+  left: 29.9rem;
 }
 
 .language {
@@ -493,7 +573,7 @@ header .nav-list a {
 .sparkle1 {
   position: absolute;
   top: -3rem;
-  left: 27.6rem;
+  left: 38.6rem;
 }
 
 .sparkle2 {
@@ -512,7 +592,8 @@ header .nav-list a {
   height: 70.5rem;
   margin: 0 auto;
   position: relative;
-  background: url(../images/water.png) center no-repeat;
+  /* background: url("../images/water.png") center no-repeat; */ */
+  /* background-size: contain; */
 }
 
 .water p {
@@ -532,8 +613,8 @@ header .nav-list a {
 }
 
 .lotus1 {
-  top: 11rem;
-  right: 15rem;
+  top: 10rem;
+  right: 24rem;
   animation: rotate_left 8s cubic-bezier(0.13, 0.5, 0.37, 1.03) infinite;
   transition: 3s;
 }
@@ -547,14 +628,38 @@ header .nav-list a {
   padding: 1.5rem;
   border-radius: 0.5rem;
   position: absolute;
-  top: 10rem;
-  left: 55rem;
+  top: 11rem;
+  left: 63rem;
   z-index: 3;
   display: none;
 }
 
 .lotus1:hover.lotus1_expl p {
   display: block;
+}
+
+/* #lotus1{
+  width: 27.6rem;
+  height: 26.7rem;
+  position: relative;  
+}
+
+#lotus01{
+  width: 258px;
+  height: 238px;
+  position: absolute;
+  top: 12rem;
+  left: 39rem;  
+} */
+
+#main-wrapper{
+  width: 100vw;
+  width: 100vh;
+}
+
+canvas{
+  display: block;
+  width: 100%;
 }
 
 /* .lotus2_expl {
@@ -580,38 +685,40 @@ header .nav-list a {
   border-radius: 0.5rem;
   position: absolute;
   top: 51rem;
-  left: 45rem;
+  left: 49rem;
   z-index: 3;
   display: none;
 }
 
 .lotus2 {
   top: 28rem;
-  left: 11rem;
+  left: 18rem;
 }
 
 .lotus3 {
   top: 11rem;
-  left: 12rem;
+  left: 24rem;
   animation: rotate_right 8s ease infinite;
   transition: 3s;
 }
 
 .lotus4 {
-  bottom: 17rem;
-  left: 39rem;
+  top: 41rem;
+  left: 43rem;
   animation: rotate_right 8s cubic-bezier(0.11, 0.86, 0.5, 1.17) infinite;
   transition: 3s;
 }
 
 .lotus5 {
-  bottom: 19rem;
-  right: 7rem;
+  /* top: 38rem;
+  right: 19rem; */
+  top: 38rem;
+  left: 58rem;
 }
 
 .lotus6 {
-  bottom: 5rem;
-  left: 24rem;
+  top: 51rem;
+  left: 30rem;
   animation: rotate_left 5s ease infinite;
   transition: 3s;
 }
@@ -647,22 +754,22 @@ header .nav-list a {
 }
 
 .frog1 {
-  bottom: 0rem;
-  left: -21rem;
+  top: 41rem;
+  left: -4rem;
   animation: quiver 5s 1.8s cubic-bezier(0.45, 0.22, 0.42, 1.55) infinite;
   transition: all 2s;
 }
 
 .frog2 {
-  bottom: 0rem;
-  left: -42rem;
+  top: 41rem;
+  left: -24rem;
   animation: quiver 5s 1.7s cubic-bezier(0, 1.22, 0.51, 1.23) infinite;
   transition: all 2s;
 }
 
 .croc {
-  bottom: 0;
-  right: -47rem;
+  top: 36rem;
+  left: 77rem;
   animation: jump 7s cubic-bezier(0.1, 2, 0.69, 1.98) infinite;
   transition: all 3s;
 }
@@ -689,6 +796,10 @@ header .nav-list a {
   100% {
     transform: translateY(0rem);
   }
+}
+
+.dg.ac {
+  display: none;
 }
 
 /* section 5 */

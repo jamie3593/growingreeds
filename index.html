@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="stylesheet" href="https://use.typekit.net/apn0tdz.css" />
     <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
-
     <link rel="stylesheet" href="css/style.css" />
 
     <script
@@ -107,9 +107,9 @@
 
           <p>
             For the past five months, I've literally written code day in, day
-            out to the point where it's almost hard to believe I've yet to speak
-            to my friends in programming language by accident. I'm that hard
-            working 💪
+            out to the point where it's almost hard to believe I have not spoken
+            to a friend of mine in programming language by accident. I'm that
+            hard working 💪
           </p>
         </div>
         <div class="sec2-images">
@@ -160,17 +160,23 @@
         <div class="pond">
           <img src="images/bigsparkle.png" alt="sparkle" class="sparkle1" />
           <img src="images/bigsparkle.png" alt="sparkle" class="sparkle2" />
-          <div class="water">
+          <div class="water" id="main-wrapper">
+            <canvas id="my-canvas"></canvas>
             <div class="project01">
               <a
                 href="https://jamiechandesu.github.io/wellingtongallery/"
                 target="_blank"
-                ><img
+              >
+                <!-- <div id="lotus1">
+                  <canvas id="lotus01"></canvas>
+                </div> -->
+                <img
                   src="images/lotus1.png"
                   alt="a drawing of lotus"
                   class="lotus1"
                 />
               </a>
+
               <div class="lotus1_expl">
                 <img src="images/welly.jpg" alt="" />
                 <p>뉴질랜드 웰링턴에 위치한 가상의 갤러리 웹 사이트</p>
@@ -375,14 +381,104 @@
           autoScrolling: true,
           scrollHorizontally: true,
         });
-      });
 
-      //methods
-      $.fn.fullpage.setAllowScrolling(true);
+        //methods
+        $.fn.fullpage.setAllowScrolling(true);
+      });
 
       new fullpage("#fullpage", {
         anchors: ["sec1", "sec2", "sec3", "sec4", "sec5", "sec6", "footer"],
       });
     </script>
+
+    <!-- wave image effect script -->
+    <script id="vertex" type="x-shader/x-vertex">
+        uniform float u_time;
+      uniform sampler2D u_texture;
+      uniform vec2 u_pixels;
+      uniform int u_distortion;
+      uniform float u_strength;
+      uniform float u_speed;
+
+      varying vec2 v_uv;
+      varying vec4 v_position;
+      varying float v_progress;
+
+      void main(){
+
+          v_uv = uv;
+
+          float distance = length(v_uv - vec2(0.5));
+          float maxDistance = length(vec2(0.5));
+          float normalizedDistance = distance/maxDistance;
+          vec3 pos = position;
+
+          switch (u_distortion) {
+              case 1:
+                  // center Blow In
+                  pos.z = 0.2 *  sin( normalizedDistance * u_strength + 1.0 * u_time * u_speed) * 0.2;
+                  break;
+              case 2:
+                  // center Blow Out
+                  pos.z = 0.2 *  sin( -normalizedDistance * u_strength + 1.0 * u_time * u_speed) * 0.2;
+                  break;
+              case 3:
+                  // flow Left
+                  pos.z = 0.2 * sin( pos.x  * u_strength + 1.0 * u_time * u_speed) * 0.2;
+                  break;
+              case 4:
+                  // Flow Right
+                  pos.z = 0.2 *  sin( -pos.x * u_strength + 1.0 * u_time * u_speed) * 0.2;
+                  break;
+              case 5:
+                  // Flow down
+                  pos.z = 0.2 *  sin( pos.y  * u_strength + 1.0 * u_time * u_speed) * 0.2;
+                  break;
+              case 6:
+                  // Flow Up
+                  pos.z = 0.2 *  sin( -pos.y  * u_strength + 1.0 * u_time * u_speed) * 0.2;
+                  break;
+              case 7:
+                  // center Blow + flow left
+                  pos.z = 0.2 *  sin( pos.x  * normalizedDistance * u_strength + 1.0 * u_time * u_speed) * 0.2;
+                  break;
+              case 8:
+                  // center Blow + flow right
+                  pos.z = 0.2 *  sin( -pos.x  * normalizedDistance * u_strength + 1.0 * u_time * u_speed) * 0.2;
+                  break;
+              case 9:
+                  // center Blow + flow down
+                  pos.z = 0.2 *  sin( pos.y  * normalizedDistance * u_strength + 1.0 * u_time * u_speed) * 0.2;
+                  break;
+              case 10:
+                  // center Blow + flow up
+                  pos.z = 0.2 *  sin( -pos.y  * normalizedDistance * u_strength + 1.0 * u_time * u_speed) * 0.2;
+                  break;
+          }
+
+          //pos.z = 0.2 *  sin( pos.y  * normalizedDistance * u_strength + 1.0 * u_time * u_speed) * 0.2;
+          gl_Position = projectionMatrix * modelViewMatrix  * vec4(pos, 1.0)  ;
+
+      }
+    </script>
+
+    <script id="fragment" type="x-shader/x-fragment">
+        uniform float u_time;
+      uniform vec4 u_resolution;
+      uniform float u_progress;
+      uniform sampler2D u_texture;
+
+      varying vec2 v_uv;
+      varying vec4 v_position;
+
+      void main(){
+
+          gl_FragColor = vec4(texture2D(u_texture, v_uv));
+
+      }
+    </script>
+    <script src="js/three.min.js"></script>
+    <script src="js/dat.gui.min.js"></script>
+    <script src="js/wave.js"></script>
   </body>
 </html>

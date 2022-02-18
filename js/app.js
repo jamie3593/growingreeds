@@ -4,6 +4,8 @@ const lotus1 = document.querySelector(".lotus1");
 const lotus1_expl = document.querySelector(".lotus1_expl");
 const lotus2 = document.querySelector(".lotus2");
 const lotus2_expl = document.querySelector(".lotus2_expl");
+const lotus3 = document.querySelector(".lotus3");
+const lotus3_expl = document.querySelector(".lotus3_expl");
 const lotus4 = document.querySelector(".lotus4");
 const lotus4_expl = document.querySelector(".lotus4_expl");
 
@@ -22,6 +24,15 @@ function hover2() {
   lotus2_expl.style.display = "block";
   lotus2.addEventListener("mouseout", (e) => {
     lotus2_expl.style.display = "none";
+  });
+}
+
+lotus3.addEventListener("mouseover", hover3);
+
+function hover3() {
+  lotus3_expl.style.display = "block";
+  lotus3.addEventListener("mouseout", (e) => {
+    lotus3_expl.style.display = "none";
   });
 }
 

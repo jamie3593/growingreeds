@@ -600,6 +600,7 @@ header .nav-list a {
   font-family: "Cafe24Simplehae";
   line-height: 1.5;
   font-size: 1.8rem;
+  transform: rotate(0.03deg);
 }
 
 .lotus{

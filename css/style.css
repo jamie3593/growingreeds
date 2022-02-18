@@ -709,6 +709,12 @@ canvas{
   z-index: 3;
 }
 
+.lotus6_expl{
+  top: 58rem;
+  left: 20rem;
+  z-index: 3;
+}
+
 .lotus2 {
   top: 28rem;
   left: 18rem;
@@ -821,11 +827,11 @@ canvas{
   margin: auto;
   /* background-color: #10a7c1 */
   background: rgba( 255, 255, 255, 0.25 );
-  animation: drop 1.5s .3s cubic-bezier(1,.19,.66,.12)  infinite;
+  animation: drop 1.5s .5s cubic-bezier(1,.19,.66,.12)  infinite;
 }
 
 .drop2 {
-  animation: drop 1.5s cubic-bezier(1,.19,.66,.12) .5s infinite;
+  animation: drop 1.5s cubic-bezier(1,.19,.66,.12) .3s infinite;
 }
 
 .drop3 {

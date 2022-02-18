@@ -619,6 +619,7 @@ header .nav-list a {
   border-radius: 2.5rem;
   position: absolute;
   display: none;
+  transition: all 2s;
 }
 
 .lotus > img{
@@ -764,6 +765,98 @@ canvas{
     transform: rotate(0deg);
   }
 }
+
+.drops {
+  position:relative;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  z-index: 1;
+  opacity: 0;
+  animation: fade-in .1s linear .4s forwards;
+}
+
+.drop2 {
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius:0% 100% 100% 100%;
+  transform: rotate(45deg);
+  position: absolute;
+  left: 0rem;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  /* background-color: #10a7c1 */
+  background: rgba( 255, 255, 255, 0.25 );
+}
+
+.drop3{
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius:0% 100% 100% 100%;
+  transform: rotate(45deg);
+  position: absolute;
+  left: 0rem;
+  right: -6rem;
+  bottom: 0;
+  margin: auto;
+  /* background-color: #10a7c1 */
+  background: rgba( 255, 255, 255, 0.25 );
+}
+
+.drop1 {
+  /* width: 90px;
+  height: 16px;
+  bottom: 2px;
+  border-radius: 0; */
+  width: 1.2rem;
+  height: 1.6rem;
+  border-radius:0% 100% 100% 100%;
+  transform: rotate(45deg);
+  position: absolute;
+  left: -12rem;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  /* background-color: #10a7c1 */
+  background: rgba( 255, 255, 255, 0.25 );
+  animation: drop 1.5s .3s cubic-bezier(1,.19,.66,.12)  infinite;
+}
+
+.drop2 {
+  animation: drop 1.5s cubic-bezier(1,.19,.66,.12) .5s infinite;
+}
+
+.drop3 {
+  animation: drop 1.5s cubic-bezier(1,.19,.66,.12) 1.2s infinite;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes drop {
+  0% {
+    bottom: 0px;
+    opacity: 1;
+  }
+  
+  80% {
+    opacity: 1;
+  }
+  
+  100% {
+    opacity: 1;
+    bottom: -200px;
+  }
+}
+
 
 .frog1,
 .frog2,
